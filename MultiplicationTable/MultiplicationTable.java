@@ -1,10 +1,9 @@
 public class MultiplicationTable {
-
-    public static void generate(int number) {
-        StringBuilder output = new StringBuilder();
-        for (int i = 1; i <= 10; i++) {
-            output.append(number).append(" x ").append(i).append(" = ").append(number * i).append("\n");
+    public static void generate(int num) {
+        var res = new StringBuilder();
+        for (int i = 1; i <= 10; i++){
+            res.append(num + " x " + i + " = " + num*i + "\n");
         }
-        System.out.print(output.toString());
+        System.out.print(res);
     }
 }

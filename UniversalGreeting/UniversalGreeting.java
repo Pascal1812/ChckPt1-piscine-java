@@ -1,14 +1,19 @@
 public class UniversalGreeting {
     public static String greeting(String message) {
-        switch (message) {
-            case "EN":
-                return "Hello, How are you?";
+        String res;
+        switch (message){
             case "FR":
-                return "Bonjour comment allez-vous?";
+                res = "Bonjour comment allez-vous?";
+            break;
+            case "EN":
+                res = "Hello, How are you?";
+            break;
             case "ES":
-                return "Hola, cómo estás?";
+                res = "Hola, cómo estás?";
+            break;
             default:
-                return "";
+            res = "";
         }
+        return res;
     }
 }

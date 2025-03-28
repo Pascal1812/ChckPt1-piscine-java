@@ -1,16 +1,20 @@
 public class RotateArray {
     public static Integer[] rotate(Integer[] arr, int rotationCount) {
-        int len = arr.length;
-        if (len == 0 || rotationCount % len == 0) {
+        var len = arr.length;
+        if (arr == null || len == 0){
             return arr;
         }
+
+        Integer[] res = new Integer[len];
         rotationCount = rotationCount % len;
-        if (rotationCount < 0) {
-            rotationCount += len;
+        if (rotationCount < 0){
+            rotationCount += len ;
         }
-        Integer[] rotated = new Integer[len];
-        System.arraycopy(arr, len - rotationCount, rotated, 0, rotationCount);
-        System.arraycopy(arr, 0, rotated, rotationCount, len - rotationCount);
-        return rotated;
+
+        for (int i = 0; i < len; i++){
+            var pos = (i - rotationCount + len) % len;
+            res[i] = arr[pos];
+        }
+        return res;
     }
 }
